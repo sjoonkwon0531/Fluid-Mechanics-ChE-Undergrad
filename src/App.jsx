@@ -3,8 +3,8 @@ import Week1App from "./Week1App.jsx";
 import Week2App from "./Week2App.jsx";
 import Week3App from "./Week3App.jsx";
 import Week4App from "./Week4App.jsx";
-import Week1App_EN from "./Week1App_EN.jsx";
-import Week2App_EN from "./Week2App_EN.jsx";
+import Week1App_EN from "./Week1App.jsx";    // 임시: KR 버전
+import Week2App_EN from "./Week2App.jsx";    // 임시: KR 버전
 import Week3App_EN from "./Week3App_EN.jsx";
 import Week4App_EN from "./Week4App_EN.jsx";
 
