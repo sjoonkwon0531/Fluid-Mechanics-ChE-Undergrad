@@ -1,0 +1,301 @@
+/* src/styles/week13.css
+   Styles for Week 13 page — Turbulent Flow & Lubrication Approximation
+   Designed to be drop-in compatible with the existing Vite + React site.
+   Color palette intentionally muted; primary accents are #1976d2 (blue) and #d32f2f (red).
+*/
+
+.week-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1a1a1a;
+  line-height: 1.55;
+}
+
+.week-header {
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  position: relative;
+}
+.week-header h1 {
+  font-size: 1.7rem;
+  margin: 0 0 4px;
+  color: #0d47a1;
+}
+.week-header .subtitle {
+  margin: 0;
+  color: #555;
+  font-size: 1.0rem;
+}
+
+.lang-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.lang-toggle button {
+  border: none;
+  padding: 6px 12px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.lang-toggle button.active {
+  background: #1976d2;
+  color: white;
+}
+
+.toc {
+  background: #f6f8fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 14px 20px;
+  margin-bottom: 32px;
+}
+.toc h3 { margin: 0 0 8px; font-size: 0.95rem; color: #555; }
+.toc ol { margin: 0; padding-left: 22px; }
+.toc li { margin: 3px 0; }
+.toc a { color: #1565c0; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+section {
+  margin: 40px 0;
+  scroll-margin-top: 20px;
+}
+section h2 {
+  font-size: 1.3rem;
+  color: #0d47a1;
+  border-left: 4px solid #1976d2;
+  padding-left: 10px;
+  margin: 0 0 14px;
+}
+section h3 {
+  font-size: 1.05rem;
+  color: #333;
+  margin: 18px 0 8px;
+}
+
+.prose p { margin: 10px 0; }
+.prose ul, .prose ol { margin: 10px 0; padding-left: 24px; }
+.prose li { margin: 4px 0; }
+
+.math {
+  font-family: "Times New Roman", Cambria, serif;
+  font-style: italic;
+  background: #fafafa;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.math.block {
+  display: block;
+  padding: 10px 14px;
+  margin: 8px 0;
+  border-left: 3px solid #1976d2;
+  background: #f6f8fa;
+}
+
+.callout {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+  padding: 10px 14px;
+  margin: 16px 0;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.95rem;
+}
+
+/* ============ Simulation cards ============ */
+.sim-card {
+  background: white;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  padding: 18px 18px 14px;
+  margin: 20px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.sim-card h3 {
+  margin: 0 0 6px;
+  color: #0d47a1;
+  font-size: 1.05rem;
+}
+.sim-desc {
+  margin: 0 0 14px;
+  color: #555;
+  font-size: 0.92rem;
+}
+
+.sim-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+.sim-controls.grid-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px 16px;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  min-width: 200px;
+}
+.slider span {
+  margin-bottom: 3px;
+  color: #444;
+}
+.slider input[type="range"] {
+  width: 100%;
+}
+
+.readout {
+  font-size: 0.85rem;
+  color: #555;
+  padding: 4px 10px;
+  background: #f6f8fa;
+  border-radius: 4px;
+}
+
+.sim-readouts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 6px 14px;
+  margin: 10px 0;
+  font-size: 0.85rem;
+}
+.sim-readouts > div {
+  background: #f6f8fa;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+.sim-readouts span { color: #555; }
+
+.sim-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.legend {
+  font-size: 0.85rem;
+  margin: 8px 0 2px;
+  color: #444;
+}
+.legend .dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+/* ============ Code blocks ============ */
+.codeblock {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  margin: 12px 0;
+  background: white;
+  overflow: hidden;
+}
+.codeblock-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f6f8fa;
+  padding: 8px 12px;
+  border-bottom: 1px solid #d0d7de;
+}
+.codeblock-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #0d47a1;
+  padding: 0;
+  text-align: left;
+}
+.codeblock-arrow {
+  display: inline-block;
+  width: 16px;
+  color: #555;
+}
+.codeblock-actions button {
+  margin-left: 6px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.codeblock-actions button:hover {
+  background: #eef;
+}
+.codeblock-body {
+  margin: 0;
+  padding: 14px 16px;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: "JetBrains Mono", Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  overflow-x: auto;
+  line-height: 1.45;
+}
+
+/* ============ Footer nav ============ */
+.week-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid #e0e0e0;
+}
+.week-nav a {
+  color: #1565c0;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.week-nav a:hover { text-decoration: underline; }
+
+.back-home-btn {
+  background: #1565c0;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.back-home-btn:hover { background: #0d47a1; transform: translateY(-1px); }
+
+.nav-meta {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .week-page { padding: 14px 12px 60px; }
+  .week-header h1 { font-size: 1.4rem; }
+  .lang-toggle { position: static; margin-bottom: 12px; display: inline-flex; }
+  .sim-readouts { grid-template-columns: 1fr 1fr; }
+}
