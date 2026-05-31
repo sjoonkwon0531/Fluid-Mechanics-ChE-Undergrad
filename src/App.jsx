@@ -85,7 +85,7 @@ function LandingPage({ onSelect, lang, onLang }) {
           Fluid Mechanics<br/>for Chemical Engineering
         </h1>
         <p style={{color:"#64748b",fontSize:16,maxWidth:500,margin:"0 auto",lineHeight:1.6}}>
-          {lang==="KR"?"인터랙티브 학습 도우미":"Interactive Study Companion"}<br/>Prof. S. Joon Kwon · 2025 Spring Semester
+          {lang==="KR"?"인터랙티브 학습 도우미":"Interactive Study Companion"}<br/>Prof. S. Joon Kwon · 2026 Spring Semester
         </p>
       </div>
 
